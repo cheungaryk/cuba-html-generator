@@ -1,5 +1,6 @@
 site:
-  title: Antora Docs
+  title: CUBA Demo
+  url: https://cuba-antora-demo.org
   start_page: component-b::index.adoc
 content:
   sources:
@@ -10,5 +11,6 @@ content:
     start_path: docs
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    # this path is corresponding to the ui-bundle.zip location within the cheungaryk/cuba image
+    url: /usr/local/ui-bundle.zip
     snapshot: true

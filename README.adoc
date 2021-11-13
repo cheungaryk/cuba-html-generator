@@ -1,1 +1,73 @@
 = CUBA HTML Generator
+
+CUBA (Custom UI Bundle Antora) is a simple service that can generate Antora static sites with a custom UI bundle.
+
+== Prerequisites
+
+.Install the following: 
+. https://docs.docker.com/engine/install/[Docker] to run the image
+. https://earthly.dev/get-earthly[Earthly] to build the image
+. https://github.com/nvm-sh/nvm#installing-and-updating[NodeJS 12 via nvm] to run the static site locally without the container
+. (optional) https://docs.antora.org/antora/2.3/install-and-run-quickstart/[Antora] if for some reason, you need to generate the html files without the container
+
+== Quickstart
+
+First, open your terminal and navigate to the root directory of this repo.
+
+[source,bash]
+----
+cd <PROJECT_PATH>/cuba-html-generator
+----
+
+Inside *custom-ui-bundle/*, make any changes that you want to incorporate into your static site. 
+For example, you can add a meta tag to *custom-ui-bundle/src/partials/head-meta.hbs*. 
+As you will see at the end, this meta tag will appear in the source code of every single page of the static site.
+
+After you make the changes, run the following to build the local container image 
+(`IMAGE_TAG` is an optional argument. If it is not provided, the default image tag is `latest`):
+
+[source,bash]
+----
+[IMAGE_TAG=latest] make build-image
+----
+
+Then, run the following command to build the static site:
+
+[source,bash]
+----
+make html-gen
+----
+
+If successful, under *docs-site/*, you will see a new *build/* directory which contains the newly generated static site files.
+
+Finally, run the following command to run the static site locally:
+
+[source,bash]
+----
+make run-local
+----
+
+To validate the changes, open http://127.0.0.1:8080[127.0.0.1:8080] in a web browser to land on the index page.
+Inspect the source code of the index page and you will see the meta tag! 
+You can also find this meta tag on all the other pages on the site - try it out!
+
+== Development
+
+To make changes to the UI bundle, modify the files inside *custom-ui-bundle/*.
+
+To make changes to the site configuration, modify link:/docs-site/antora-playbook.yml[].
+
+To make changes to the commands, see link:Makefile[] and link:Earthfile[]
+
+To make changes to this link:README.adoc[readme], 
+this https://powerman.name/doc/asciidoc[AsciiDoc cheatsheet] may help you with the syntax.
+
+== Further Readings
+
+. https://docs.antora.org/antora/2.3/install-and-run-quickstart/[Official Antora Documentation - Install and Run Quickstart]
+. https://docs.antora.org/antora-ui-default/[Antora Default UI Bundle Documentation]
+. https://docs.earthly.dev/[Official Earthly Documentation]
+
+== Authors
+
+Gary Cheung
