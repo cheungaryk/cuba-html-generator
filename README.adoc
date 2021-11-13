@@ -14,15 +14,20 @@ CUBA (Custom UI Bundle Antora) is a simple service that can generate Antora stat
 
 First, open your terminal and navigate to the root directory of this repo.
 
+[source,bash]
+----
+cd <PROJECT_PATH>/cuba-html-generator
+----
+
 Inside *custom-ui-bundle/*, make any changes that you want to incorporate into your static site. 
 For example, you can add a meta tag to *custom-ui-bundle/src/partials/head-meta.hbs*. 
 As you will see at the end, this meta tag will appear in the source code of every single page of the static site.
 
-After you make the changes, run the following to build the local container image:
+After you make the changes, run the following to build the local container image (IMAGE_TAG is optional, the default tag is `latest`):
 
 [source,bash]
 ----
-[TAG=latest] make build-image
+[IMAGE_TAG=latest] make build-image
 ----
 
 Then, run the following command to build the static site:
