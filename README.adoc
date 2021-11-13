@@ -41,8 +41,9 @@ Finally, run the following command to run the static site locally:
 make run-local
 ----
 
-To validate the changes, open http://127.0.0.1:8080[127.0.0.1:8080] in a web browser. 
-Inspect the source code of the page and you will see the meta tag! Feel free to do the same for the other pages too!
+To validate the changes, open http://127.0.0.1:8080[127.0.0.1:8080] in a web browser to land on the index page.
+Inspect the source code of the index page and you will see the meta tag! 
+You can also find this meta tag on all the other pages on the site - try it out!
 
 == Development
 
