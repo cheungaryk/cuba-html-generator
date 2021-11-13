@@ -23,7 +23,8 @@ Inside *custom-ui-bundle/*, make any changes that you want to incorporate into y
 For example, you can add a meta tag to *custom-ui-bundle/src/partials/head-meta.hbs*. 
 As you will see at the end, this meta tag will appear in the source code of every single page of the static site.
 
-After you make the changes, run the following to build the local container image (IMAGE_TAG is optional, the default tag is `latest`):
+After you make the changes, run the following to build the local container image 
+(`IMAGE_TAG` is an optional argument. If it is not provided, the default image tag is `latest`):
 
 [source,bash]
 ----
